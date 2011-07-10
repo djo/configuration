@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'enumerated_attribute'
 gem 'haml'
 gem 'formtastic', '~> 1.2.3'
+gem 'inherited_resources'
 
 group :development, :test do
   gem 'rspec-rails', '2.6.0'
