@@ -8,6 +8,7 @@ gem 'rails', '3.0.6'
 gem 'sqlite3'
 gem 'enumerated_attribute'
 gem 'haml'
+gem 'formtastic', '~> 1.2.3'
 
 group :development, :test do
   gem 'rspec-rails', '2.6.0'
