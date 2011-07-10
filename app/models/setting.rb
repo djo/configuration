@@ -4,4 +4,7 @@ class Setting < ActiveRecord::Base
   validates :name, :presence => true
   validates :value, :presence => true
   validates :kind, :presence => true
+  
+  validates :value, :format => { :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i }, 
+                    :if => :email?
 end
