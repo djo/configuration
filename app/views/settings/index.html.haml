@@ -1,3 +1,4 @@
-= render 'settings/form', :setting => Setting.new
+= link_to 'Add Setting', new_setting_path, :id => 'new_setting_link', :remote => true
+#new_setting_box
 
 %ul= render :partial => 'settings/setting', :collection => @settings
