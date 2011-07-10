@@ -2,7 +2,7 @@
   = form.inputs do
     = form.input :name
     = form.input :value
-    = form.input :kind
+    = form.input :kind, :as => :select, :collection => form.object.kinds.map(&:to_s)
   
   = form.buttons do
     = form.commit_button
