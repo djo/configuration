@@ -10,4 +10,6 @@ class Setting < ActiveRecord::Base
 
   validates :value, :numericality => true, 
                     :if => :number?
+                    
+  default_scope :order => 'created_at DESC'                  
 end
