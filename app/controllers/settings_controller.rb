@@ -5,8 +5,8 @@ class SettingsController < InheritedResources::Base
   
   def create
     create! do |success, failure|
-      success.html { redirect_to settings_url }
-      failure.html { redirect_to settings_url }
+      success.html { render :create }
+      failure.html { render :errors, :status => :bad_request }
     end
   end
   

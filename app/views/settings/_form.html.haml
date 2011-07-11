@@ -1,4 +1,4 @@
-= semantic_form_for setting do |form|
+= semantic_form_for setting, :format => :html, :remote => true do |form|
   = form.inputs do
     = form.input :name
     = form.input :value
