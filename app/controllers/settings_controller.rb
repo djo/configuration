@@ -1,11 +1,16 @@
 class SettingsController < InheritedResources::Base
-  actions :index, :new, :create, :destroy
-  
   layout :set_layout
   
   def create
     create! do |success, failure|
       success.html { render :create }
+      failure.html { render :errors, :status => :bad_request }
+    end
+  end
+
+  def update
+    update! do |success, failure|
+      success.html { render :update }
       failure.html { render :errors, :status => :bad_request }
     end
   end

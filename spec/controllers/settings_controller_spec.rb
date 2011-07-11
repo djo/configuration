@@ -20,7 +20,7 @@ describe SettingsController do
         response.should_not be_successful
       end
 
-      it "should render 'create' template" do
+      it "should render 'errors' template" do
         do_request(:name => '')
         response.should render_template(:errors)
       end
@@ -28,6 +28,37 @@ describe SettingsController do
       
     def do_request(opts = {})
       post :create, :setting => Factory.attributes_for(:setting).merge(opts)
+    end
+  end
+  
+  describe "#update" do
+    context "success" do
+      it "should be successfull" do
+        do_request
+        response.should be_successful
+      end
+
+      it "should render 'update' template" do
+        do_request
+        response.should render_template(:update)
+      end
+    end
+
+    context "failure" do
+      it "should not be successfull" do
+        do_request(:name => '')
+        response.should_not be_successful
+      end
+
+      it "should render 'errors' template" do
+        do_request(:name => '')
+        response.should render_template(:errors)
+      end
+    end
+      
+    def do_request(opts = {})
+      put :update, :id => Factory(:setting).id, 
+                   :setting => Factory.attributes_for(:setting).merge(opts)
     end
   end
 end

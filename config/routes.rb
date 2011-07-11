@@ -1,7 +1,7 @@
 Configuration::Application.routes.draw do
   root :to => 'settings#index'
   
-  resources :settings, :only => [:index, :new, :create, :destroy]
+  resources :settings
   
   
   # The priority is based upon order of creation:
