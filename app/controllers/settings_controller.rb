@@ -1,5 +1,5 @@
 class SettingsController < InheritedResources::Base
-  actions :index, :new, :create
+  actions :index, :new, :create, :destroy
   
   layout :set_layout
   
@@ -7,6 +7,12 @@ class SettingsController < InheritedResources::Base
     create! do |success, failure|
       success.html { render :create }
       failure.html { render :errors, :status => :bad_request }
+    end
+  end
+
+  def destroy
+    destroy! do |format|
+      format.js { render :nothing => true }
     end
   end
   

@@ -1,5 +1,8 @@
-%li
+%li.setting
   %strong= setting.name
   = setting.value
   %span= setting.kind
+  %span.buttons
+    = link_to 'Delete', setting, :class => 'delete_link', :method => :delete, :remote => true
+    
   

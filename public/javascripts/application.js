@@ -21,8 +21,17 @@ $(function () {
     $(this).replaceWith(xhr.responseText);
   }
   
+  var removeSetting = function () {
+    var setting = $(this).parents('.setting');
+    setting.remove();
+  }
+  
+  // New setting form set up
   newSettingLink.bind('ajax:success', showNewSettingForm);
   newSettingBox.delegate('form .cancel_link', 'click', hideForm);
   newSettingBox.delegate('form', 'ajax:success', addNewSetting);
   newSettingBox.delegate('form', 'ajax:error', showErrors);
+  
+  // Setting list set up
+  settings.delegate('.setting .delete_link', 'ajax:success', removeSetting);
 });
