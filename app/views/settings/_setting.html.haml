@@ -1,7 +1,7 @@
 %li.setting
-  %strong= setting.name
+  %strong= "#{setting.name}:"
   = setting.value
-  %span= setting.kind
+  %span.description= setting.kind
   %span.buttons
     = link_to 'Edit', edit_setting_path(setting), :class => 'edit_link', :remote => true
     = link_to 'Delete', setting, :class => 'delete_link', :method => :delete, :remote => true

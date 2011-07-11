@@ -1,0 +1,81 @@
+/* 
+  Basic styles were copied from
+  https://github.com/ryanb/nifty-generators/blob/master/rails_generators/nifty_layout/templates/stylesheet.css
+*/
+
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+#settings {
+  list-style-type: none;
+  padding: 0;
+}
+
+#settings .setting {
+  min-height: 25px;
+}
+
+#settings .setting .description {
+  margin-left: 5px;
+  color: #999;
+  font-style: italic;
+}
+
+#settings .setting .description:before {
+  content: "(";
+}
+
+#settings .setting .description:after {
+  content: ")";
+}
+
+
+#settings .setting a.edit_link, 
+#settings .setting a.delete_link {
+  margin-left: 5px;
+  display: none;
+}
+
+#settings .setting:hover a.edit_link, 
+#settings .setting:hover a.delete_link {
+  display: inline-block;
+}
+
+form .buttons .cancel_link {
+  margin-left: 10px;
+}
+
+form.formtastic {
+  margin: 15px 0 15px 5px;
+  border: 1px solid #ddd;
+  padding: 10px 10px 0 10px;
+  background-color: #eee;
+}
