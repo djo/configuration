@@ -10,6 +10,7 @@ $(function () {
   var hideForm = function (event, data) {
     var form = $(this).parents('form');
     form.hide();
+    return false;
   }
   
   var addNewSetting = function (event, data) {
@@ -26,6 +27,16 @@ $(function () {
     setting.remove();
   }
   
+  var showEditForm = function (event, data) {
+    var setting = $(this).parents('.setting');
+    $('.form_box', setting).html(data);
+  }
+  
+  var replaceSetting = function (event, data) {
+    var setting = $(this).parents('.setting');
+    setting.html(data);
+  }
+  
   // New setting form set up
   newSettingLink.bind('ajax:success', showNewSettingForm);
   newSettingBox.delegate('form .cancel_link', 'click', hideForm);
@@ -34,4 +45,8 @@ $(function () {
   
   // Setting list set up
   settings.delegate('.setting .delete_link', 'ajax:success', removeSetting);
+  settings.delegate('.setting .edit_link', 'ajax:success', showEditForm);
+  settings.delegate('.setting form .cancel_link', 'click', hideForm);
+  settings.delegate('.setting form', 'ajax:success', replaceSetting);
+  settings.delegate('.setting form', 'ajax:error', showErrors);
 });
